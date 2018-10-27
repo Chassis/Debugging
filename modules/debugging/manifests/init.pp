@@ -17,31 +17,31 @@ class debugging (
 	wp::plugin { 'debug-bar':
 		ensure   => enabled,
 		location => '/vagrant/wp',
-		require  => [ Package["php${php_version}-fpm", "php${php_version}-cli"], Class['wp'] ],
+		require  => Chassis::Wp[ $config['hosts'][0] ]
 	}
 	wp::plugin { 'debug-bar-extender':
 		ensure   => enabled,
 		location => '/vagrant/wp',
-		require  => [ Package["php${php_version}-fpm", "php${php_version}-cli"], Class['wp'] ],
+		require  => Chassis::Wp[ $config['hosts'][0] ]
 	}
 	wp::plugin { 'debug-bar-cron':
 		ensure   => enabled,
 		location => '/vagrant/wp',
-		require  => [ Package["php${php_version}-fpm", "php${php_version}-cli"], Class['wp'] ],
+		require  => Chassis::Wp[ $config['hosts'][0] ]
 	}
 	wp::plugin { 'debug-bar-transients':
 		ensure   => enabled,
 		location => '/vagrant/wp',
-		require  => [ Package["php${php_version}-fpm", "php${php_version}-cli"], Class['wp'] ],
+		require  => Chassis::Wp[ $config['hosts'][0] ]
 	}
 	wp::plugin { 'log-deprecated-notices':
 		ensure   => enabled,
 		location => '/vagrant/wp',
-		require  => [ Package["php${php_version}-fpm", "php${php_version}-cli"], Class['wp'] ],
+		require  => Chassis::Wp[ $config['hosts'][0] ]
 	}
 	wp::plugin { 'rewrite-rules-inspector':
 		ensure   => enabled,
 		location => '/vagrant/wp',
-		require  => [ Package["php${php_version}-fpm", "php${php_version}-cli"], Class['wp'] ],
+		require  => Chassis::Wp[ $config['hosts'][0] ]
 	}
 }
